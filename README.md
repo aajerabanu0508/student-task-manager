@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Student Task Manager — Docker + GitHub Actions + AWS EC2
 
 A beginner-friendly deployment project. The Flask app stores tasks in SQLite. Docker packages it, GitHub Actions runs tests, and successful pushes to `main` trigger deployment to an Ubuntu EC2 instance.
@@ -344,3 +345,6 @@ curl -fsS http://127.0.0.1/health
 # Stop the application (data volume remains)
 docker compose down
 ```
+=======
+# student-task-manager
+>>>>>>> daeb7be3a2af7f8521ef2d15ea1aed4d9f72bab3
