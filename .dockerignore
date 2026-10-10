@@ -1,0 +1,10 @@
+.git
+.github
+.venv
+__pycache__
+*.py[cod]
+*.db
+data/
+powershell.cmd
+.env
+.DS_Store

@@ -1,0 +1,22 @@
+services:
+  web:
+    build: .
+    container_name: student-task-manager
+    ports:
+      - "80:5000"
+    environment:
+      DATA_DIR: /app/data
+      # Set SECRET_KEY in the server environment for production.
+      SECRET_KEY: ${SECRET_KEY:-local-development-only-change-me}
+    volumes:
+      - task_data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/health', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  task_data:
